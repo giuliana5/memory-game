@@ -11,7 +11,7 @@ h1 {
 
 #game-text {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
   margin: 0% 3%;
 }
@@ -38,7 +38,7 @@ h1 {
 }
 
 #objective {
-  width: 50%;
+  width: 40%;
 }
 
 #objective p {
