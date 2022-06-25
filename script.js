@@ -1,16 +1,16 @@
 const gameContainer = document.getElementById("game");
 
 const COLORS = [
-  "red",
-  "blue",
-  "green",
-  "orange",
-  "purple",
-  "red",
-  "blue",
-  "green",
-  "orange",
-  "purple"
+  "#CDF5F6",
+  "#EFF9DA",
+  "#F9EBDF",
+  "#F9D8D6",
+  "#D6CDEA",
+  "#CDF5F6",
+  "#EFF9DA",
+  "#F9EBDF",
+  "#F9D8D6",
+  "#D6CDEA"
 ];
 
 // here is a helper function to shuffle an array
@@ -78,8 +78,8 @@ function handleCardClick(event) {
 
       // show cards for a second and reset
       setTimeout(function () {
-        event.target.style.backgroundColor = "transparent";
-        lastEvent.style.backgroundColor = "transparent";
+        event.target.style.backgroundColor = "white";
+        lastEvent.style.backgroundColor = "white";
         for (let j = 0; j < cards.length; j++) {
           cards[j].addEventListener("click", handleCardClick);
       }}, 1000);

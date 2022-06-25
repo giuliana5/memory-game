@@ -1,12 +1,74 @@
+body {
+  background-color: #abd699;
+  color:#16123F;
+  font-family: "Trebuchet MS";
+  text-align: center;
+}
+
+h1 {
+  font-size: 52px;
+}
+
+#game-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0% 3%;
+}
+
+#high-score h3 {
+  border-bottom: .5px solid #16123F;
+  padding: 10px;
+  margin: 0px;
+}
+
+#high-score {
+  margin: 10px;
+  border: 3px solid #16123F;
+  text-align: center;
+  background-image: linear-gradient(to bottom, #75c9b7 30%, #c7ddcc);
+  width: fit-content;
+}
+
+#high-score p {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0px;
+  padding: 10px;
+}
+
+#objective {
+  width: 50%;
+}
+
+#objective p {
+  font-size: 20px;
+}
+
 #game div {
-  border: 1px solid black;
-  width: 15%;
+  border-radius: 5%;
+  width: 16%;
   height: 200px;
   margin: 10px;
   display: inline-block;
+  background-color: white;
+}
+
+@media screen and (max-width: 600px) {
+  #game div {
+    width: 15%;
+  }
 }
 
 #restart {
   font-size: 20px;
   border-radius: 5px;
+  background-color: #FFE26A;
+  border: none;
+  padding: 10px;
+  margin: 10px;
+}
+
+#restart:hover {
+  font-weight: bold;
 }
