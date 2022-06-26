@@ -1,4 +1,5 @@
 const gameContainer = document.getElementById("game");
+const savedHighScore = document.getElementById("saved-high-score");
 
 const COLORS = [
   "#CDF5F6",
@@ -61,6 +62,7 @@ let clicks = 0;
 let matched = 0;
 
 let lastEvent;
+let score = 0;
 
 // TODO: Implement this function!
 function handleCardClick(event) {
@@ -69,6 +71,7 @@ function handleCardClick(event) {
 
   // evaluate if the cards match
   if (clicks === 2) {
+    score ++;
 
     // remove background color
     if (event.target.className !== lastEvent.className) {
@@ -83,7 +86,7 @@ function handleCardClick(event) {
         for (let j = 0; j < cards.length; j++) {
           cards[j].addEventListener("click", handleCardClick);
       }}, 1000);
-      } else {
+    } else {
 
       // prevent the matched card from changing
       event.target.removeEventListener("click", handleCardClick);
@@ -97,7 +100,7 @@ function handleCardClick(event) {
     }
 
     // reset number of cards selected
-    clicks = 0
+    clicks = 0;
   } else {
     lastEvent = event.target
     event.target.removeEventListener("click", handleCardClick);
@@ -107,7 +110,20 @@ function handleCardClick(event) {
 // refresh page when all cards are matched
 function gameOver(num) {
   if (num === 10) {
+    saveHighScore(score);
     location.reload();
+  }
+}
+
+
+// save highscore
+function saveHighScore(scr) {
+  if (highScore !== null) {
+    if (scr < parseInt(highScore)) {
+      localStorage.setItem("highscore", score);
+    }
+  } else {
+    localStorage.setItem("highscore", score);
   }
 }
 
@@ -119,3 +135,5 @@ restart.addEventListener("click", function(event) {
 
 // when the DOM loads
 createDivsForColors(shuffledColors);
+let highScore = localStorage.getItem("highscore");
+savedHighScore.innerText = highScore;

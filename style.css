@@ -30,7 +30,7 @@ h1 {
   width: fit-content;
 }
 
-#high-score p {
+#saved-high-score {
   font-size: 40px;
   font-weight: bold;
   margin: 0px;
